@@ -1,0 +1,53 @@
+GPU: [0,1]
+
+VERBOSE: True
+
+MODEL:
+  MODE: 'Fusion'  # Recons or Fusion
+  SESSION: 'ps128_bs16'
+
+# Optimization arguments.
+OPTIM:
+  BATCH_SIZE: 16
+  LR_INITIAL: 2e-4
+  LR_MIN: 1e-6
+
+Recons:
+  RESUME: False
+  RESUME_PATH: './checkpoints/Recons/models/model_epoch_4.pth'
+  NUM_EPOCHS: 4
+  TRAIN_PS: 128
+  TRAIN_DIR: './Dataset/DVD_train' # path of training data
+  SAVE_DIR: './checkpoints'          # path to save models and images
+
+Fusion:
+  RESUME: False
+  RESUME_PATH: './checkpoints/Fusion/models/model_epoch_80.pth'
+  NUM_EPOCHS: 80
+  TRAIN_PS: 128
+  TRAIN_DIR: './Dataset/DVD_train' # path of training data
+  SAVE_DIR: './checkpoints'          # path to save models and images
+
+
+Edge_Detect:
+  TEST_DIR: './Dataset/DVD_test'
+  MODEL: './checkpoints/Recons/models/model_epoch_4.pth'
+  VIS_DIR: './results/visEdges/'
+
+TEST:
+  TEST_DIR: './Dataset/DVD_test'
+  MODEL: './checkpoints/Fusion/models/model_epoch_80.pth'
+  SIGMA: 4
+  VIS_DIR: './results/visResults/'
+
+TEST_REAL:
+  TEST_DIR: './Dataset/DVD_real'
+  MODEL: './checkpoints/Fusion/models/model_epoch_80.pth'
+  VIS_DIR: './results/visRealResults/'
+
+VIEW_DIP:
+  TEST_DIR: './Dataset/DVD_test'
+  MODEL: './checkpoints/Fusion/models/model_epoch_80.pth'
+  SIGMA: 4
+  VIS_DIR: './results/visDIP/'
+
