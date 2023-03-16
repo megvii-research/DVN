@@ -1,7 +1,6 @@
 # DarkVisionNet: Low-Light Imaging via RGB-NIR Fusion with Deep Inconsistency Prior (Under review)
 
-[Paper]
-[Supplementary Material]
+[Paper](https://arxiv.org/abs/2303.06834)
 
 ## Abstract
 ---
@@ -19,7 +18,7 @@ Benefiting from this, the proposed DVN obtains high-quality low-light images wit
 
 ## Dataset Preparation
 ---
-Please download the dataset from [link](coming soon) first. 
+Please download the dataset from [link](https://drive.google.com/drive/folders/10FV0q_GAP4gjQUbQ78waezfyGO07AxlP?usp=share_link) first. 
 
 Then, unzip the file into `Dataset` directory.
 And the directory structure is organized as:
